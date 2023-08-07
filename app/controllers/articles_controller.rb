@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: %i[edit update show destory]
+  before_action :set_article, only: %i[edit update show destroy]
   
   def index
     @articles = Article.all
@@ -33,6 +33,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy 
+
     @article.destroy
 
     redirect_to root_path, status: :see_other
